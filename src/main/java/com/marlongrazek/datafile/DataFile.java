@@ -27,6 +27,11 @@ public class DataFile {
         config = YamlConfiguration.loadConfiguration(file);
     }
 
+    public DataFile(File file) {
+        this.file = file;
+        config = YamlConfiguration.loadConfiguration(file);
+    }
+
     public void save() {
         try {
             config.save(file);

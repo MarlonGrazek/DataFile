@@ -11,9 +11,13 @@ public class DataFile {
 
     private final File file;
     private FileConfiguration config;
+    private String name;
+    private String path;
 
     public DataFile(String name, String path) {
 
+        this.name = name;
+        this.path = path;
         file = new File(path, name + ".yml");
 
         if (!file.exists()) {
@@ -29,6 +33,8 @@ public class DataFile {
 
     public DataFile(File file) {
         this.file = file;
+        this.name = file.getName();
+        this.path = file.getPath();
         config = YamlConfiguration.loadConfiguration(file);
     }
 
@@ -55,6 +61,14 @@ public class DataFile {
 
     public Set<String> getConfigurationSection(String path, Boolean getKeys) {
         return config.getConfigurationSection(path).getKeys(getKeys);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getPath() {
+        return path;
     }
 
     public void reload() {

@@ -11,8 +11,8 @@ public class DataFile {
 
     private final File file;
     private FileConfiguration config;
-    private String name;
-    private String path;
+    private final String name;
+    private final String path;
 
     public DataFile(String name, String path) {
 

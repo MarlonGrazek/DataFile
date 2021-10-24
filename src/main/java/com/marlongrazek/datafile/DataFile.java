@@ -59,6 +59,22 @@ public class DataFile {
         return config.get(path);
     }
 
+    public String getString(String path) {
+        return config.getString(path);
+    }
+
+    public int getInt(String path) {
+        return config.getInt(path);
+    }
+
+    public double getDouble(String path) {
+        return config.getDouble(path);
+    }
+
+    public boolean getBoolean(String path) {
+        return config.getBoolean(path);
+    }
+
     public Set<String> getConfigurationSection(String path, Boolean getKeys) {
         return config.getConfigurationSection(path).getKeys(getKeys);
     }

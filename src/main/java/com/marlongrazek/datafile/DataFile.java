@@ -5,6 +5,8 @@ import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Set;
 
 public class DataFile {
@@ -74,7 +76,9 @@ public class DataFile {
     }
 
     public Set<String> getConfigurationSection(String path, Boolean getKeys) {
-        return config.getConfigurationSection(path).getKeys(getKeys);
+        if (config.getConfigurationSection(path) != null)
+            return config.getConfigurationSection(path).getKeys(getKeys);
+        return new HashSet<>(new ArrayList<>());
     }
 
     public String getName() {

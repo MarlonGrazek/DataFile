@@ -78,7 +78,7 @@ public class DataFile {
     public Set<String> getConfigurationSection(String path, Boolean getKeys) {
         if (config.getConfigurationSection(path) != null)
             return config.getConfigurationSection(path).getKeys(getKeys);
-        return new HashSet<>(new ArrayList<>()); 
+        return new HashSet<>(new ArrayList<>());
     }
 
     public String getName() {

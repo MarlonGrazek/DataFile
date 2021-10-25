@@ -23,8 +23,7 @@ public class DataFile {
         if (!file.exists()) {
             try {
                 file.createNewFile();
-            } catch (IOException e) {
-                e.printStackTrace();
+            } catch (IOException ignored) {
             }
         }
 
@@ -41,8 +40,7 @@ public class DataFile {
     public void save() {
         try {
             config.save(file);
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException ignored) {
         }
     }
 

@@ -7,6 +7,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class DataFile {
@@ -73,6 +74,14 @@ public class DataFile {
 
     public boolean getBoolean(String path) {
         return config.getBoolean(path);
+    }
+
+    public long getLong(String path) {
+        return config.getLong(path);
+    }
+
+    public List<Long> getLongList(String path) {
+        return config.getLongList(path);
     }
 
     public Set<String> getConfigurationSection(String path, Boolean getKeys) {

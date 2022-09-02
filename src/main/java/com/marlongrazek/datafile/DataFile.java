@@ -133,4 +133,10 @@ public class DataFile {
     public void reload() {
         config = YamlConfiguration.loadConfiguration(file);
     }
+
+    public static DataFile fromName(String path, String name) {
+        File file = new File(path, name + ".yml");
+        if (file.exists()) return new DataFile(file);
+        return null;
+    }
 }
